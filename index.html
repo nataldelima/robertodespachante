@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roberto Despachante | Documentação do seu veículo sem complicação em Campo Grande - MS</title>
+    <meta name="description" content="Há mais de 27 anos cuidando da documentação do seu veículo com agilidade, segurança e atendimento personalizado. Transferência, primeiro emplacamento, licenciamento, CNH e regularização em Campo Grande - MS e todo o Brasil.">
+    
+    <!-- Open Graph / Meta Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Roberto Despachante | Documentação do seu veículo sem complicação">
+    <meta property="og:description" content="Despachante de veículos em Campo Grande - MS. Transferência, primeiro emplacamento, licenciamento e regularização rápida.">
+    <meta property="og:image" content="assets/img/hero_car.jpg">
+    <link rel="icon" type="image/png" href="assets/img/logo_vermelho-129x60.png">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            onyx: '#0d0f12',
+                            dark: '#13161c',
+                            cardDark: '#181c24',
+                            red: '#dc2626',
+                            redHover: '#b91c1c',
+                            redDark: '#991b1b',
+                            redLight: '#fef2f2',
+                            slateDark: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1e293b;
+        }
+
+        /* Botão Vermelho Institucional da Marca (Adequado à Logo) */
+        .btn-brand-red {
+            background: linear-gradient(135deg, #e11d48 0%, #dc2626 50%, #b91c1c 100%);
+            color: #ffffff;
+            font-weight: 700;
+            border-radius: 9999px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35);
+        }
+        .btn-brand-red:hover {
+            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 50%, #dc2626 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(220, 38, 38, 0.45);
+        }
+
+        /* Botão Outline Escuro */
+        .btn-outline-dark {
+            background-color: rgba(255, 255, 255, 0.06);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+            border-radius: 9999px;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(8px);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-outline-dark:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Cards de Serviços do Mockup */
+        .service-item-card {
+            background: #ffffff;
+            border: 1px solid #eef2f6;
+            border-radius: 1.25rem;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-item-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 30px -10px rgba(15, 23, 42, 0.08);
+            border-color: #fecaca;
+        }
+
+        /* Placa Veicular Estilizada */
+        .license-plate-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3px 6px;
+            border: 1.5px solid #334155;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: 800;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            color: #0f172a;
+            background: #f8fafc;
+            line-height: 1;
+        }
+
+        /* WhatsApp Flutuante com Pulso */
+        .whatsapp-float-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            width: 58px;
+            height: 58px;
+            border-radius: 9999px;
+            background-color: #25d366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .whatsapp-float-btn:hover {
+            background-color: #1eb857;
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Linha de Conexão das Etapas */
+        @media (min-width: 1024px) {
+            .step-connector::after {
+                content: '';
+                position: absolute;
+                top: 20px;
+                left: 48px;
+                right: -24px;
+                height: 1px;
+                border-top: 1px dashed rgba(255, 255, 255, 0.2);
+                z-index: 1;
+            }
+            .step-item:last-child .step-connector::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 antialiased selection:bg-red-600 selection:text-white">
+
+    <!-- NAVBAR HEADER -->
+    <header id="main-header" class="sticky top-0 z-50 bg-[#0d0f12]/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logotipo Original Mantido com Moldura Limpa -->
+                <a href="#inicio" class="flex items-center gap-3 group" title="Roberto Despachante">
+                    <div class="bg-white px-3 py-1.5 rounded-xl shadow-sm border border-white/20 transition-transform group-hover:scale-105">
+                        <img src="assets/img/logo_vermelho-129x60.png" alt="Roberto Despachante" class="h-9 sm:h-10 w-auto object-contain">
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex items-center space-x-10 text-sm font-semibold">
+                    <a href="#inicio" class="text-red-500 relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-red-600 transition">Início</a>
+                    <a href="#servicos" class="text-slate-300 hover:text-white transition">Serviços</a>
+                    <a href="#sobre" class="text-slate-300 hover:text-white transition">Sobre</a>
+                    <a href="#contato" class="text-slate-300 hover:text-white transition">Contato</a>
+                </nav>
+
+                <!-- CTA Desktop -->
+                <div class="hidden md:flex items-center">
+                    <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" class="btn-brand-red px-6 py-2.5 text-sm gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>Falar pelo WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-toggle" type="button" class="text-slate-200 hover:text-white p-2 rounded-lg focus:outline-none" aria-label="Abrir menu de navegação">
+                        <i id="menu-icon" class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Painel Mobile Drawer -->
+        <div id="mobile-nav" class="hidden md:hidden bg-[#13161c] border-b border-white/10 px-4 pt-3 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2.5 px-3 rounded-lg text-red-500 font-semibold bg-white/5">Início</a>
+            <a href="#servicos" class="block py-2.5 px-3 rounded-lg text-slate-200 hover:text-white hover:bg-white/5 font-semibold">Serviços</a>
+            <a href="#sobre" class="block py-2.5 px-3 rounded-lg text-slate-200 hover:text-white hover:bg-white/5 font-semibold">Sobre</a>
+            <a href="#contato" class="block py-2.5 px-3 rounded-lg text-slate-200 hover:text-white hover:bg-white/5 font-semibold">Contato</a>
+            <div class="pt-2">
+                <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista." target="_blank" class="btn-brand-red w-full py-3 text-sm gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                    <span>Falar pelo WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative bg-[#0d0f12] text-white overflow-hidden pt-12 pb-24 lg:pt-20 lg:pb-32">
+        <!-- Luz ambiente sutil em vermelho da marca -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-red-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <!-- Conteúdo Esquerda -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <!-- Eyebrow Tagline -->
+                    <div class="inline-flex items-center gap-2">
+                        <span class="text-xs sm:text-sm font-bold tracking-[0.18em] uppercase text-slate-300">
+                            DESPACHANTE DE VEÍCULOS EM CAMPO GRANDE - MS
+                        </span>
+                    </div>
+
+                    <!-- Título Principal H1 com Destaque em Vermelho da Marca -->
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+                        Documentação do<br>
+                        seu veículo <span class="text-red-500">sem complicação.</span>
+                    </h1>
+
+                    <!-- Parágrafo de Apoio -->
+                    <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        Conte com o Roberto Despachante para cuidar dos processos e documentos do seu veículo com praticidade, segurança e atendimento personalizado.
+                    </p>
+
+                    <!-- Botões de Ação -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista%20do%20Roberto%20Despachante." target="_blank" class="btn-brand-red w-full sm:w-auto px-8 py-4 text-base gap-2.5">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                            <span>Falar com um especialista</span>
+                        </a>
+                        <a href="#servicos" class="btn-outline-dark w-full sm:w-auto px-7 py-4 text-base gap-2 group">
+                            <span>Conheça nossos serviços</span>
+                            <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Imagem do Carro do Hero à Direita -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Moldura com gradiente de integração -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+                            <img src="assets/img/hero_car.jpg" alt="Veículo moderno - Roberto Despachante" class="w-full h-[320px] sm:h-[420px] lg:h-[480px] object-cover object-center transform transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0d0f12] via-transparent to-transparent opacity-60"></div>
+                            <div class="absolute inset-0 bg-gradient-to-r from-[#0d0f12]/60 via-transparent to-transparent lg:block hidden"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST / STATS BAR DO MOCKUP -->
+    <section class="relative z-20 -mt-10 sm:-mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl shadow-slate-900/5 border border-slate-100 p-6 sm:p-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-center">
+                <!-- Item 1: Avaliações Google -->
+                <div class="flex items-center gap-4">
+                    <div class="flex-shrink-0">
+                        <!-- Google SVG Colorido -->
+                        <svg class="w-9 h-9" viewBox="0 0 24 24">
+                            <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.04h3.88c2.28-2.1 3.665-5.2 3.665-9.14z"/>
+                            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.04c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.94H1.24v3.13C3.26 21.36 7.33 24 12 24z"/>
+                            <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.6H1.24C.45 8.18 0 9.99 0 12s.45 3.82 1.24 5.4l4.04-3.13z"/>
+                            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.24 6.6l4.04 3.13c.95-2.84 3.6-4.98 6.72-4.98z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl font-extrabold text-slate-900">263</span>
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 font-medium">Avaliações 5 estrelas no Google</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Atendimento Personalizado -->
+                <div class="flex items-center gap-4 group">
+                    <div class="w-11 h-11 rounded-xl bg-slate-50 flex items-center justify-center text-slate-700 text-xl flex-shrink-0 group-hover:text-red-600 transition-colors">
+                        <i class="fas fa-user-group"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Atendimento personalizado</h4>
+                        <p class="text-xs text-slate-500">Suporte para esclarecer suas dúvidas</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Experiência e Confiança -->
+                <div class="flex items-center gap-4 group">
+                    <div class="w-11 h-11 rounded-xl bg-slate-50 flex items-center justify-center text-slate-700 text-xl flex-shrink-0 group-hover:text-red-600 transition-colors">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Experiência e confiança</h4>
+                        <p class="text-xs text-slate-500">Atendimento profissional (+27 anos)</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Campo Grande - MS -->
+                <div class="flex items-center gap-4 group">
+                    <div class="w-11 h-11 rounded-xl bg-slate-50 flex items-center justify-center text-slate-700 text-xl flex-shrink-0 group-hover:text-red-600 transition-colors">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Campo Grande - MS</h4>
+                        <p class="text-xs text-slate-500">Atendimento local e nacional</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO NOSSOS SERVIÇOS -->
+    <section id="servicos" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Cabeçalho da Seção -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-red-600 block mb-2">NOSSOS SERVIÇOS</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Soluções para facilitar<br class="hidden sm:inline"> a documentação do seu veículo
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-500 mt-3 max-w-2xl">
+                        Organizamos os principais serviços de despachante para que você encontre rapidamente o que precisa.
+                    </p>
+                </div>
+                <div class="hidden sm:block">
+                    <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20todos%20os%20servi%C3%A7os%20dispon%C3%ADveis." target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-red-600 transition group">
+                        <span>Ver todos os serviços</span>
+                        <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Grid de Cards de Serviços -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Card 1: Transferência de veículo -->
+                <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20Transfer%C3%AAncia%20de%20ve%C3%ADculo." target="_blank" class="service-item-card p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800 text-xl mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Transferência de veículo</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                            Auxílio nos procedimentos necessários para transferência de propriedade.
+                        </p>
+                    </div>
+                    <div class="pt-6 flex justify-end">
+                        <span class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-red-600 group-hover:bg-red-50 transition">
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Card 2: Licenciamento -->
+                <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20Licenciamento." target="_blank" class="service-item-card p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800 text-xl mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Licenciamento</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                            Orientação e suporte para regularização do licenciamento do veículo.
+                        </p>
+                    </div>
+                    <div class="pt-6 flex justify-end">
+                        <span class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-red-600 group-hover:bg-red-50 transition">
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Card 3: Primeiro emplacamento -->
+                <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20Primeiro%20emplacamento." target="_blank" class="service-item-card p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mb-5 group-hover:bg-red-600 transition-colors">
+                            <span class="license-plate-icon">ABC-1234</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Primeiro emplacamento</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                            Suporte nos procedimentos relacionados ao primeiro registro e emplacamento.
+                        </p>
+                    </div>
+                    <div class="pt-6 flex justify-end">
+                        <span class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-red-600 group-hover:bg-red-50 transition">
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Card 4: Regularização de documentos -->
+                <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20Regulariza%C3%A7%C3%A3o%20de%20documentos." target="_blank" class="service-item-card p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800 text-xl mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Regularização de documentos</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                            Auxílio na regularização de pendências e documentação veicular.
+                        </p>
+                    </div>
+                    <div class="pt-6 flex justify-end">
+                        <span class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-red-600 group-hover:bg-red-50 transition">
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Card 5: Consultas -->
+                <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20Consultas%20veiculares." target="_blank" class="service-item-card p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800 text-xl mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-magnifying-glass"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Consultas</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                            Orientação e consultas relacionadas à situação documental do veículo.
+                        </p>
+                    </div>
+                    <div class="pt-6 flex justify-end">
+                        <span class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-red-600 group-hover:bg-red-50 transition">
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Card 6: Outros serviços -->
+                <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20outros%20servi%C3%A7os%20veiculares." target="_blank" class="service-item-card p-7 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-800 text-xl mb-5 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                            <i class="fas fa-gear"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Outros serviços</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                            Entre em contato para verificar como podemos ajudar.
+                        </p>
+                    </div>
+                    <div class="pt-6 flex justify-end">
+                        <span class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-red-600 group-hover:bg-red-50 transition">
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Link Mobile no rodapé dos serviços -->
+            <div class="mt-8 text-center sm:hidden">
+                <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20todos%20os%20servi%C3%A7os%20dispon%C3%ADveis." target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-red-600 transition">
+                    <span>Ver todos os serviços</span>
+                    <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO COMO FUNCIONA (Processo em 3 Etapas com Foto de Contrato) -->
+    <section class="bg-[#0d0f12] text-white py-20 lg:py-28 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                <!-- Coluna Esquerda: Etapas -->
+                <div class="lg:col-span-7">
+                    <span class="text-xs font-bold uppercase tracking-widest text-red-500 block mb-3">COMO FUNCIONA</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-12">
+                        Resolver a documentação<br>
+                        pode ser mais simples
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                        <!-- Etapa 1 -->
+                        <div class="step-item relative space-y-3">
+                            <div class="step-connector flex items-center">
+                                <span class="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 text-white font-extrabold text-sm flex items-center justify-center shadow-md shadow-red-600/30 relative z-10">
+                                    01
+                                </span>
+                            </div>
+                            <h4 class="text-base font-bold text-white pt-2">Entre em contato</h4>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                Fale conosco pelo WhatsApp e explique o que você precisa.
+                            </p>
+                        </div>
+
+                        <!-- Etapa 2 -->
+                        <div class="step-item relative space-y-3">
+                            <div class="step-connector flex items-center">
+                                <span class="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 text-white font-extrabold text-sm flex items-center justify-center shadow-md shadow-red-600/30 relative z-10">
+                                    02
+                                </span>
+                            </div>
+                            <h4 class="text-base font-bold text-white pt-2">Envie os documentos</h4>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                Receba orientação sobre os documentos necessários para o seu processo.
+                            </p>
+                        </div>
+
+                        <!-- Etapa 3 -->
+                        <div class="step-item relative space-y-3">
+                            <div class="step-connector flex items-center">
+                                <span class="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 text-white font-extrabold text-sm flex items-center justify-center shadow-md shadow-red-600/30 relative z-10">
+                                    03
+                                </span>
+                            </div>
+                            <h4 class="text-base font-bold text-white pt-2">Nós cuidamos do processo</h4>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                                Acompanhe o andamento enquanto cuidamos dos procedimentos necessários.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Imagem de Assinatura de Documentos -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                        <img src="assets/img/signing_docs.jpg" alt="Profissional cuidando da documentação veicular" class="w-full h-[360px] sm:h-[420px] object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0f12]/80 via-transparent to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE O ROBERTO DESPACHANTE -->
+    <section id="sobre" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+                <!-- Imagem do Escritório à Esquerda -->
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-100 group">
+                        <img src="assets/img/office_desk.jpg" alt="Escritório Roberto Despachante" class="w-full h-[380px] sm:h-[460px] object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-5 py-3 rounded-xl shadow-lg border border-slate-100">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center text-white font-black text-lg shadow-md shadow-red-600/30">
+                                    27+
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-slate-900 leading-none">Anos de Tradição</p>
+                                    <p class="text-[11px] text-slate-500 mt-1 leading-none">Campo Grande - MS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conteúdo do Sobre à Direita -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-red-600 block mb-2">SOBRE O ROBERTO DESPACHANTE</span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Experiência para cuidar do que é importante para você
+                        </h2>
+                    </div>
+
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                        O Roberto Despachante oferece atendimento profissional para quem precisa resolver processos relacionados à documentação de veículos. Nosso objetivo é tornar cada etapa mais clara e prática para o cliente.
+                    </p>
+
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                        Com atendimento presencial e serviço delivery em Campo Grande e suporte para despachos interestaduais em todo o Brasil, garantimos segurança, lealdade e transparência do início ao fim.
+                    </p>
+
+                    <div class="pt-2">
+                        <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20a%20documenta%C3%A7%C3%A3o%20do%20meu%20ve%C3%ADculo." target="_blank" class="btn-brand-red px-8 py-3.5 text-sm gap-2">
+                            <span>Fale conosco</span>
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER MID-PAGE CTA (Precisa resolver a documentação...) -->
+    <section class="bg-[#0d0f12] text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Conteúdo Esquerda -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center text-2xl shadow-lg shadow-red-600/40">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                        Precisa resolver a documentação<br class="hidden sm:inline"> do seu veículo?
+                    </h3>
+                    <p class="text-sm sm:text-base text-slate-300">
+                        Fale com nossa equipe e descubra como podemos ajudar.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20gostaria%20de%20resolver%20a%20documenta%C3%A7%C3%A3o%20do%20meu%20ve%C3%ADculo." target="_blank" class="btn-brand-red px-8 py-4 text-base gap-2.5">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                            <span>Falar pelo WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Imagem do Carro na Estrada à Direita -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                        <img src="assets/img/car_scenic_road.jpg" alt="Carro em viagem - Roberto Despachante" class="w-full h-[260px] sm:h-[320px] object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0f12]/70 via-transparent to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO / FALE CONOSCO (Informações + Mapa + Formulário) -->
+    <section id="contato" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-red-600 block mb-2">CONTATO</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Fale conosco</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Coluna 1: Informações de Contato -->
+                <div class="lg:col-span-4 space-y-6">
+                    <!-- Bloco Endereço -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center flex-shrink-0 text-lg">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Endereço</h4>
+                            <p class="text-sm font-bold text-slate-900">Campo Grande - MS</p>
+                            <p class="text-xs text-slate-600 mt-1">Rua Alegrete, 1643 - Cel. Antonino<br>CEP 79010-800</p>
+                        </div>
+                    </div>
+
+                    <!-- Bloco WhatsApp / Telefones -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-green-50 text-green-600 flex items-center justify-center flex-shrink-0 text-lg">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">WhatsApp & Telefones</h4>
+                            <a href="https://api.whatsapp.com/send?phone=556799061649" target="_blank" class="text-sm font-bold text-slate-900 hover:text-green-600 transition block">
+                                (67) 9906-1649 (WhatsApp)
+                            </a>
+                            <a href="tel:+556733511580" class="text-xs text-slate-600 hover:text-slate-900 transition mt-1 block">
+                                (67) 3351-1580 (Fixo)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Bloco Horário de Atendimento -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center flex-shrink-0 text-lg">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Atendimento</h4>
+                            <p class="text-sm font-bold text-slate-900">Segunda a Sexta</p>
+                            <p class="text-xs text-slate-600 mt-1">8h às 17h (Horário Comercial)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Mapa Interativo do Google Maps -->
+                <div class="lg:col-span-4 h-full min-h-[340px]">
+                    <div class="bg-white p-2 rounded-2xl border border-slate-100 shadow-sm h-full overflow-hidden flex flex-col">
+                        <div class="relative w-full h-[320px] lg:h-full rounded-xl overflow-hidden min-h-[300px]">
+                            <iframe 
+                                title="Localização Roberto Despachante" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.645898723685!2d-54.61078168508065!3d-20.46968398628552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e6724c37b18f%3A0xe54f65f9f4b7a2b!2sR.%20Alegrete%2C%201643%20-%20Cel.%20Antonino%2C%20Campo%20Grande%20-%20MS%2C%2079010-800!5e0!3m2!1spt-BR!2sbr!4v1626900000000!5m2!1spt-BR!2sbr" 
+                                class="w-full h-full border-0 absolute inset-0" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna 3: Formulário de Mensagem Direta -->
+                <div class="lg:col-span-4 bg-white p-7 rounded-2xl border border-slate-100 shadow-sm">
+                    <form id="contact-form" onsubmit="enviarMensagemForm(event)" class="space-y-4">
+                        <!-- Nome -->
+                        <div>
+                            <label for="form-nome" class="block text-xs font-bold text-slate-700 mb-1">Nome</label>
+                            <input type="text" id="form-nome" required placeholder="Seu nome" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition">
+                        </div>
+
+                        <!-- WhatsApp com DDD -->
+                        <div>
+                            <label for="form-phone" class="block text-xs font-bold text-slate-700 mb-1">WhatsApp</label>
+                            <input type="tel" id="form-phone" required placeholder="Seu número com DDD" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition">
+                        </div>
+
+                        <!-- Serviço Desejado -->
+                        <div>
+                            <label for="form-servico" class="block text-xs font-bold text-slate-700 mb-1">Serviço desejado</label>
+                            <select id="form-servico" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition bg-white">
+                                <option value="Transferência de veículo">Transferência de veículo</option>
+                                <option value="Licenciamento">Licenciamento</option>
+                                <option value="Primeiro emplacamento">Primeiro emplacamento</option>
+                                <option value="Regularização de documentos">Regularização de documentos</option>
+                                <option value="Consultas (Leilão/Sinistro)">Consultas veiculares</option>
+                                <option value="Outros serviços">Outros serviços</option>
+                            </select>
+                        </div>
+
+                        <!-- Mensagem -->
+                        <div>
+                            <label for="form-mensagem" class="block text-xs font-bold text-slate-700 mb-1">Mensagem</label>
+                            <textarea id="form-mensagem" rows="3" placeholder="Como podemos ajudar?" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition"></textarea>
+                        </div>
+
+                        <!-- Botão de Envio -->
+                        <div class="pt-2">
+                            <button type="submit" class="btn-brand-red w-full py-3.5 text-sm gap-2">
+                                <span>Enviar mensagem</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER DO MOCKUP -->
+    <footer class="bg-[#08090b] text-slate-400 py-14 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-white/10">
+                <!-- Logotipo Original Mantido no Footer -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                    <div class="bg-white px-3 py-1.5 rounded-xl inline-flex items-center shadow-sm">
+                        <img src="assets/img/logo_vermelho-129x60.png" alt="Roberto Despachante" class="h-9 w-auto object-contain">
+                    </div>
+                    <span class="text-xs text-slate-400 max-w-xs">
+                        Documentação veicular com praticidade e confiança.
+                    </span>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div class="flex items-center space-x-6 text-xs font-semibold text-slate-300">
+                    <a href="#inicio" class="hover:text-red-400 transition">Início</a>
+                    <a href="#servicos" class="hover:text-red-400 transition">Serviços</a>
+                    <a href="#sobre" class="hover:text-red-400 transition">Sobre</a>
+                    <a href="#contato" class="hover:text-red-400 transition">Contato</a>
+                </div>
+
+                <!-- Redes Sociais e Cidade -->
+                <div class="flex items-center gap-5 text-sm">
+                    <a href="https://api.whatsapp.com/send?phone=556799061649" target="_blank" class="w-8 h-8 rounded-full bg-white/5 hover:bg-red-600 hover:text-white flex items-center justify-center text-slate-300 transition" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.google.com/search?q=Roberto+Despachante+Campo+Grande" target="_blank" class="w-8 h-8 rounded-full bg-white/5 hover:bg-red-600 hover:text-white flex items-center justify-center text-slate-300 transition" title="Google Avaliações">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <span class="text-xs text-slate-400 flex items-center gap-1.5 pl-2">
+                        <i class="fas fa-location-dot text-red-500 text-xs"></i> Campo Grande - MS
+                    </span>
+                </div>
+            </div>
+
+            <!-- Direitos e Conformidade Legal -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-3 text-center sm:text-left">
+                <p>&copy; <span id="current-year"></span> Roberto Despachante. Todos os direitos reservados.</p>
+                <p>Este site é de propriedade privada e não possui vínculo formal com órgãos governamentais.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://api.whatsapp.com/send?phone=556799061649&text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20documenta%C3%A7%C3%A3o%20veicular." class="whatsapp-float-btn" target="_blank" aria-label="Fale conosco pelo WhatsApp" title="Falar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPTS JS -->
+    <script>
+        // Atualizar ano dinâmico
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Menu Mobile Toggle
+        const menuBtn = document.getElementById('mobile-menu-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileNav.classList.toggle('hidden');
+            if (isHidden) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Fechar menu mobile ao clicar em qualquer link
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Submissão do formulário para o WhatsApp
+        function enviarMensagemForm(e) {
+            e.preventDefault();
+            const nome = document.getElementById('form-nome').value.trim();
+            const phone = document.getElementById('form-phone').value.trim();
+            const servico = document.getElementById('form-servico').value;
+            const mensagem = document.getElementById('form-mensagem').value.trim();
+
+            let texto = `*Contato via Site - Roberto Despachante*\n`;
+            texto += `👤 *Nome:* ${nome}\n`;
+            texto += `📱 *Telefone/WhatsApp:* ${phone}\n`;
+            texto += `📋 *Serviço de interesse:* ${servico}\n`;
+            if (mensagem) {
+                texto += `💬 *Mensagem:* ${mensagem}`;
+            }
+
+            const urlWhatsapp = `https://api.whatsapp.com/send?phone=556799061649&text=${encodeURIComponent(texto)}`;
+            window.open(urlWhatsapp, '_blank');
+        }
+
+        // Efeito de scroll na navbar
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 40) {
+                header.classList.add('shadow-lg', 'bg-[#0d0f12]');
+                header.classList.remove('bg-[#0d0f12]/95');
+            } else {
+                header.classList.remove('shadow-lg');
+                header.classList.add('bg-[#0d0f12]/95');
+            }
+        });
+    </script>
+</body>
+</html>
